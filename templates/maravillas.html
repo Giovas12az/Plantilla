@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+
+{% block contenidos %}
+
+<section class="container my-5">
+    <div class="text-center">
+        <h1>Las maravillas del mundo</h1>
+    </div>
+    <h2>¿Que son?</h2>
+    <div class="col md-8 ">
+        <p style="font-size: 20px">Las maravillas del mundo son monumentos o estructuras consideradas extraordinarias
+            por su belleza, historia, arquitectura, o significado cultural.</p>
+    </div>
+    <h2>Las 7 Maravillas del mundo</h2>
+    <h2>1.La gran muralla china</h2>
+    <p style="font-size: 20px">Ubicación: China
+
+        Construcción: Comenzó en el siglo VII a.C., ampliada por varias dinastías.
+
+        Extensión: Más de 21,000 km.
+
+        Propósito: Defensa contra invasores del norte.
+
+        Dato curioso: No es visible desde la Luna, como se creía, pero sí desde el espacio con ciertas condiciones.</p>
+        <img src="{{ url_for('static', filename='img/murala.jpg') }}" alt="imagen de un loris perezoso">
+
+
+
+
+    <h2>2.Petra</h2>
+    <p style="font-size: 20px ">Ubicación: Jordania
+
+        Construcción: Siglo V a.C. por los nabateos.
+
+        Características: Ciudad tallada en piedra rosada.
+
+        Función: Centro comercial y cultural en rutas de caravanas.
+
+        Dato curioso: Se perdió por siglos y fue redescubierta en 1812 por un explorador suizo.</p>
+        <img src="{{ url_for('static', filename='img/petra.jpg) }}" alt="imagen de un loris perezoso">
+
+    <h2>3.Cristo redentor</h2>
+    <p style="font-size: 20px">Ubicación: Río de Janeiro, Brasil
+
+        Construcción: Inaugurado en 1931.
+
+        Altura: 30 metros (sin contar la base de 8 metros).
+
+        Materiales: Concreto armado y piedra jabonosa.
+
+        Dato curioso: Se construyó para celebrar el centenario de la independencia de Brasil.</p>
+        <img src="{{ url_for('static', filename='img/descarga.jpg') }}" alt="cristo redentor">
+
+
+    <h2>4.Machu Pichu</h2>
+    <p style="font-size: 20px ">Ubicación: Perú
+
+        Construcción: Siglo XV por el Imperio Inca.
+
+        Altura: 2,430 metros sobre el nivel del mar.
+
+        Propósito: Residencia real o santuario religioso.
+
+        Redescubrimiento: Por Hiram Bingham en 1911.
+
+        Dato curioso: Se mantuvo casi intacta porque los españoles nunca la encontraron.</p>
+        <img src="{{ url_for('static', filename='img/machu.jpg') }}" alt="4.Machu Pichu">
+    <h2>5.Chichén Itzá</h2>
+    <p style="font-size: 20px">Ubicación: Yucatán, México
+
+        Construcción: Siglo VI al XIII, por los mayas.
+
+        Estructura principal: El Templo de Kukulkán (una pirámide escalonada).
+
+        Función: Centro político, religioso y astronómico.
+
+        Dato curioso: Durante los equinoccios, la sombra proyecta una “serpiente” que baja por las escaleras del templo.
+    </p>
+<img src="{{ url_for('static', filename='img/chiche.jpg') }}" alt="imagen de un loris perezoso">
+
+    <h2>6.El Coliseo</h2>
+    <p style="font-size: 20px">Ubicación: Roma, Italia
+
+        Construcción: Año 70-80 d.C.
+
+        Capacidad: Hasta 50,000 personas.
+
+        Uso: Combates de gladiadores, espectáculos públicos.
+
+        Dato curioso: Se usó como cantera durante la Edad Media. Hoy es símbolo contra la pena de muerte.
+
+    </p>
+<img src="{{ url_for('static', filename='img/coli.jpg') }}" alt="">
+
+    <h2>7.Taj Mahal</h2>
+    <p style="font-size: 20px">
+        Ubicación: Agra, India
+
+        Construcción: 1632-1653 por el emperador Shah Jahan.
+
+        Motivo: Mausoleo para su esposa favorita, Mumtaz Mahal.
+
+        Materiales: Mármol blanco con incrustaciones de piedras preciosas.
+
+        Dato curioso: Cambia de color según la luz del día.
+    </p>
+
+<img src="{{ url_for('static', filename='img/taj.jpg') }}" alt="imagrn el Taj Mahal">
+
+
+
+</section>
+
+
+
+{% endblock %}

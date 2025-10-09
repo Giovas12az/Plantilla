@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block contenidos %}
+<section class="container my-5">
+    <div class="text-center">
+        <h1>Los Animales Exoticos</h1>
+    </div>
+    <h2>¿Que son?</h2>
+    <div class="col md-8 ">
+        <p style="font-size: 20px">Los animales exóticos son especies que no son nativas de un ecosistema específico y
+            que suelen ser inusuales
+            o
+            fascinantes debido a su apariencia o comportamiento.
+            Definición y características
+            Los animales exóticos son aquellos que se encuentran fuera de su hábitat natural y que pueden ser poco
+            comunes o
+            llamativos para los humanos. Según la Real Academia Española, el término "exótico" se refiere a algo que
+            proviene de un país o cultura lejana y desconocida. Estos animales pueden ser endémicos, es decir, que solo
+            se
+            encuentran en un lugar específico, o pueden haber sido introducidos en nuevas regiones por humanos.</p>
+    </div>
+    <h2>Ejemplos de animales Exoticos</h2>
+    <h2>Animales Terrestres</h2>
+    <h3>1.loris perezoso</h3>
+    <p style="font-size: 20px">El slow loris, mono lento o loris perezoso (Nycticebus) es un tipo de primate que habita
+        en Asia y está
+        considerado como uno de los animales más exóticos y lentos del mundo. Su historia evolutiva es misteriosa ya que
+        apenas se han encontrado restos fósiles de sus antepasados.
+
+        Este animal exótico del mundo no posee apenas protección contra sus depredadores y por ello ha desarrollado una
+        glándula en las axilas que supura veneno.</p>
+    <div class="col md-6">
+        <img src="{{ url_for('static', filename='img/descarga (2).webp') }}" alt="imagen de un loris perezoso">
+    </div>
+
+    <h3>Tapir</h3>
+    <p style="font-size: 20px ">El tapir es un mamífero grande y herbívoro que habita en zonas boscosas de américa del
+        sur, américa central y el
+        sudeste asiático. Se trata de una de las familias más antiguas desde hace unos 55 millones de años, lo que lo
+        convierte en uno de los animales exóticos del mundo. Tiene una trompa muy versátil y es un animal dócil y
+        tranquilo. Se encuentra en peligro de extinción, en especial en México, por la caza indiscriminada, el bajo
+        potencial reproductivo y la destrucción de su hábitat.</p>
+    <div class="col-6">
+        <img src="{{ url_for('static', filename='img/descarga (1).webp') }}" alt="imagen de un Tapir">
+    </div>
+    <div class="text-center">
+        <h2>Animales Acuaticos</h2>
+    </div>
+    <h3>1.Dragones de mar</h3>
+    <p style="font-size: 20px">El dragón de mar es un pez que habita en las aguas costeras de Australia y Tasmania. Se
+        caracteriza por su apariencia única, con apéndices que se asemejan a hojas y algas, lo que le proporciona un
+        camuflaje efectivo en su entorno marino. A diferencia de otros peces, los dragones de mar no tienen escamas y
+        su cuerpo está cubierto por una piel suave y flexible.
+
+        Estos animales exóticos del mundo son parientes cercanos de los caballitos de mar y las agujas de mar. Los
+        dragones de mar machos son los encargados de llevar los huevos en una bolsa especial hasta que eclosionan, lo
+        que es una característica inusual en el reino animal.</p>
+    <div class="col md-6">
+        <img src="{{ url_for('static', filename='img/dragon.webp') }}" alt="imagen de un Dragones de mar">
+    </div>
+
+    <h3>2.Caulophryne jordani</h3>
+    <p style="font-size: 20px">Estos animales exóticos forman parte del género de los peces abisales, que habitan en las
+        zonas más profundas y recónditas de los océanos de todo el mundo y apenas se tiene información clara de su
+        comportamiento y vida. Tiene un pequeño órgano luminoso con el que atrae a sus presas.
+
+        Las dificultades que tienen para encontrar pareja en la oscuridad hace que las hembras, de gran tamaño, se
+        conviertan en hospedadoras del macho que entra dentro de su cuerpo como un parásito y la mantiene fecundada de
+        por vida.</p>
+    <div class="col md-6">
+        <img src="{{ url_for('static', filename='img/pez_fellote.webp') }}" alt="imagen de un Dragones de mar">
+    </div>
+    <div class="text-center">
+        <h2>Animales Aereos</h2>
+    </div>
+    <h3>1.Quetzal</h3>
+    <p style="font-size: 20px">El quetzal es un ave emblemática de Guatemala, conocida por su hermoso plumaje verde iridiscente y su importancia
+        cultural en Mesoamérica.
+        Características Físicas
+        El quetzal, cuyo nombre científico es Pharomachrus mocinno, es un ave de tamaño mediano que mide entre 36 y 40
+        centímetros de largo, sin incluir su distintiva cola, que puede alcanzar hasta 65 centímetros. El macho presenta
+        un plumaje verde brillante con reflejos dorados y un pecho de color rojo carmesí, mientras que la hembra tiene
+        un plumaje más sobrio, generalmente verde y marrón.</p>
+    <div class="col md-6">
+        <img src="{{ url_for('static', filename='img/descarga.webp') }}"
+            alt="imagen de un Quetzal">
+    </div>
+
+    <h3>guacamayo jacinto</h3>
+    <p style="font-size: 20px">El guacamayo jacinto, también conocido como guacamayo azul, de nombre científico Anodorhynchus hyacinthinus, es
+        un ave psitaciforme, emparentado con los loros. Actualmente, está en peligro de extinción. Se estima que quedan
+        unos 3.000 ejemplares.
+
+        Su tamaño le hace ser uno de los guacamayos más grandes del mundo, ya que puede alcanzar fácilmente los 100
+        centímetros de longitud (de la cabeza a la cola). Lo normal es que lleguen a los 70 centímetros; además con un
+        peso de entre un kilo y medio y kilo setecientos.
+
+    </p>
+    <div class="col md-6">
+        <img src="{{ url_for('static', filename='img/OIP (3).webp') }}" alt="imagen de un guacamayo jacinto">      
+    </div>
+</section>
+
+{% endblock %}
