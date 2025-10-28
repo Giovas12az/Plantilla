@@ -39,11 +39,16 @@
                             <li><a class="dropdown-item" href="/vehiculos">Vehículos</a></li>
                             <li><a class="dropdown-item" href="/maravillas">Maravillas</a></li>
                             <li><a class="dropdown-item" href="/acerca">Acerca</a></li>
-                            <li><a class="dropdown-item" href="/Formulario">Crear cuenta</a></li>
+                            {% if not session.get('logueado')%}
+                            <li><a class="dropdown-item" href="/Formulario">Crear cuenta</a>
+                            {% endif %}
+                            </li>
+                            
                             <li>
                                 {% if session.get("logueado") %}
                                 <a class="dropdown-item text-danger" href="/logout">Cerrar sesión ({{ session['usuario']
                                     }})</a>
+                                
                                 {% else %}
                                 <a class="dropdown-item" href="/inicio">Iniciar sesión</a>
                                 {% endif %}
