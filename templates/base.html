@@ -1,85 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Mi sitio{% endblock %}</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block extra_head %}{% endblock %}
 </head>
-<body>
-    <header>
-        <h1>{% block contenidos %}<section class="container my-4">
-    <main class="container-fluid" class="bg-dark">
-        <div class="p-4 bg-dark text-white text-center">
-            <h1>Desarrollo de Plantillas Base</h1>
+
+<body class="bg-dark text-white">
+
+
+    <header class="bg-dark text-center py-4 mb-3">
+        <h1>Desarrollo de Plantillas Base</h1>
+    </header>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-secondary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Buscador</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item dropdown">
+                        <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            Menú
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="/">Inicio</a></li>
+                            <li><a class="dropdown-item" href="/animales">Animales</a></li>
+                            <li><a class="dropdown-item" href="/vehiculos">Vehículos</a></li>
+                            <li><a class="dropdown-item" href="/maravillas">Maravillas</a></li>
+                            <li><a class="dropdown-item" href="/acerca">Acerca</a></li>
+                            <li><a class="dropdown-item" href="/Formulario">Crear cuenta</a></li>
+                            <li>
+                                {% if session.get("logueado") %}
+                                <a class="dropdown-item text-danger" href="/logout">Cerrar sesión ({{ session['usuario']
+                                    }})</a>
+                                {% else %}
+                                <a class="dropdown-item" href="/inicio">Iniciar sesión</a>
+                                {% endif %}
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+
+                {% if session.get("logueado") %}
+                <span class="navbar-text text-light me-3">
+                    Bienvenido, <strong>{{ session['usuario'] }}</strong>
+                </span>
+                {% endif %}
+            </div>
         </div>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Buscador</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-                    <ul class="navbar-nav">
-                        <li class="nav-item dropdown">
-                            <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Menu
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu-dark">
-                                <li><a class="dropdown-item" href="/animales">animales</a></li>
-                                <li><a class="dropdown-item" href="/vehiculos">vehiculos</a></li>
-                                <li><a class="dropdown-item" href="/maravillas">maravillas</a></li>
-                                <li><a class="dropdown-item" href="/acerca">acerca</a></li>
-                                <li><a class="dropdown-item" href="/Formulario">Crear cuenta</a></li>
-                                <li><a class="dropdown-item" href="/inicio">Iniciar sesion</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <div class="p-4 mb-2 bg-dark text-white ">
-            <h2 class="p-4 text-center">Informacion de la pagina:</h2>
-            <p style="font-size: 20px">Esta página está diseñada como una base para aprender a estructurar sitios web de
-                forma organizada y
-                reutilizable.
-                Aquí encontrarás ejemplos temáticos sobre diferentes contenidos, como animales exóticos, vehículos
-                antiguos y las maravillas del mundo.
+    </nav>
 
-                Podrás explorar secciones con imágenes, descripciones interesantes y datos curiosos. Este proyecto te
-                permitirá comprender cómo se crean sitios con múltiples páginas enlazadas, usando una plantilla
-                coherente.</p>
-            <h2>¿Que puedes encontrar?</h2>
-            <ul>
-                <li style="font-size: 20px">Galerías con imágenes y datos curiosos</li>
-                <li style="font-size: 20px">Estructura clara y navegable</li>
-                <li style="font-size: 20px">Diseño base adaptable a cualquier tema</li>
-            </ul>
+    <main class="container my-4">
+        {% block contenidos %}
+        <h2 class="text-center mb-4">Información de la página</h2>
+        <p style="font-size: 20px">
+            Esta página está diseñada como una base para aprender a estructurar sitios web de forma organizada y
+            reutilizable. Aquí encontrarás ejemplos temáticos sobre diferentes contenidos, como animales exóticos,
+            vehículos antiguos y las maravillas del mundo.
+        </p>
 
-            <div class="row">
-                <h2>Ejemplos</h2>
-                <div class="col md-4">
-                    <img src="static/img/OIP.webp" class="img-thumbnail" alt="">
-                </div>
-                <div class="col md-4">
-                    <img src="static/img/OIP (2).webp" class="img-thumbnail" alt="...">
-                </div>
-                <div class="col md-4">
-                    <img src="static/img/OIP (1).webp" class="img-thumbnail" alt="...">
-                </div>
-            </div>
-            <div class="p-4">
-                <h3>Reyes Perez Giovanni Azael</h3>
-                <h3>3-D</h3>
-                <h3>Estudiante del cetis 61</h3>
-                <h3>16 años</h3>
-            </div>
-        </main>
-            {% endblock %}
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-        </body>
+        <h3>¿Qué puedes encontrar?</h3>
+        <ul>
+            <li style="font-size: 20px">Galerías con imágenes y datos curiosos</li>
+            <li style="font-size: 20px">Estructura clara y navegable</li>
+            <li style="font-size: 20px">Diseño base adaptable a cualquier tema</li>
+        </ul>
+
+        <div class="row text-center">
+            <h3>Ejemplos</h3>
+            <div class="col-md-4"><img src="{{ url_for('static', filename='img/OIP.webp') }}" class="img-thumbnail"
+                    alt="..."></div>
+            <div class="col-md-4"><img src="{{ url_for('static', filename='img/OIP (2).webp') }}" class="img-thumbnail"
+                    alt="..."></div>
+            <div class="col-md-4"><img src="{{ url_for('static', filename='img/OIP (1).webp') }}" class="img-thumbnail"
+                    alt="..."></div>
+        </div>
+
+        <div class="text-center mt-4">
+            <h3>Reyes Pérez Giovanni Azael</h3>
+            <h3>3-D</h3>
+            <h3>Estudiante del CETis 61</h3>
+            <h3>16 años</h3>
+        </div>
+        {% endblock %}
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
 </html>
